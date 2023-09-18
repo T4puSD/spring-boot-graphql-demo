@@ -58,6 +58,10 @@ export SPRING_DATA_MONGODB_URI=mongodb://host[:port]/[database_name]
 mvn clean spring-boot:run
 ```
 
+## Test the graphql interactive query console
+Go to the following url `http://localhost:8080/graphiql` to get the default graphiql
+query console to perform query against the graphql server.
+
 ### Populating MongoDB with dummy data
 The source directory has a bash file with rest call to fill up the test container with 
 dummy data. Run the following bash file with the following command `bash dummydata-populate.sh` to do so.
