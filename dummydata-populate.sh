@@ -12,7 +12,7 @@ curl -X POST http://localhost:8080/posts -H "Content-Type: application/json" -d 
 
 
 ## Comments
-curl -X POST http://localhost:8080/posts -H "Content-Type: application/json" -d '{"userId": "1", "postId": "1", "content": "Agreed"}'
+curl -X POST http://localhost:8080/comments -H "Content-Type: application/json" -d '{"userId": "1", "postId": "1", "content": "Agreed"}'
 
 curl -X POST http://localhost:8080/comments -H "Content-Type: application/json" -d '{"userId": "1", "postId": "2", "content": "Agreed"}'
 
