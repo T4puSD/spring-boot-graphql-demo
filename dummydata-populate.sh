@@ -10,7 +10,7 @@ curl -X POST http://localhost:8080/posts -H "Content-Type: application/json" -d 
 
 curl -X POST http://localhost:8080/posts -H "Content-Type: application/json" -d '{"slug": "the-nvim-comparator", "title": "The Nvim Comparator of Future", "description": "Finally some comparator with futuristic API emerges in the NeoVim plugin repository. Really existed to try it out", "authorId": "2"}'
 
-curl -X POST http://localhost:8080/posts -H "Content-Type: application/json" -d '{"slug": "caddy", "caddy-as-ftp-server": "Caddy As FTP Server", "description": "Caddy is a fantastic front server! I really like it for its versatility but i use it mostly for serving files over ftp in my local network and i really like it. Give it a try yourself i hop you will like it.", "authorId": "2"}'
+curl -X POST http://localhost:8080/posts -H "Content-Type: application/json" -d '{"slug": "caddy-as-ftp-server", "title" : "Caddy As FTP Server", "description": "Caddy is a fantastic front server! I really like it for its versatility but i use it mostly for serving files over ftp in my local network and i really like it. Give it a try yourself i hop you will like it.", "authorId": "2"}'
 
 
 ## Comments
