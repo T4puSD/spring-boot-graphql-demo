@@ -23,4 +23,5 @@ type Query {
     posts: [Post!]
     comments: [Comment!]
     user(id: ID!): User
+    post(id: ID!): Post
 }
