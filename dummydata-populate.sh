@@ -3,7 +3,7 @@
 ## Users
 curl -X POST http://localhost:8080/users -H "Content-Type: application/json" -d '{"email": "john@dummy.com", "name": "john"}'
 
-curl -X POST http://localhost:8080/users -H "Content-Type: application/json" -d '{"email": "jommatech@dummy.com", "name": "jommatech"}'
+curl -X POST http://localhost:8080/users -H "Content-Type: application/json" -d '{"email": "amy@dummy.com", "name": "amy"}'
 
 ## Posts
 curl -X POST http://localhost:8080/posts -H "Content-Type: application/json" -d '{"slug": "the-dummy-post", "title": "The Dummy Post", "description": "THis is just a dummy post", "authorId": "1"}'
@@ -12,8 +12,8 @@ curl -X POST http://localhost:8080/posts -H "Content-Type: application/json" -d 
 
 
 ## Comments
-curl -X POST http://localhost:8080/comments -H "Content-Type: application/json" -d '{"userId": "1", "postId": "1", "content": "Agreed"}'
+curl -X POST http://localhost:8080/comments -H "Content-Type: application/json" -d '{"userId": "1", "postId": "1", "content": "Great Post"}'
 
-curl -X POST http://localhost:8080/comments -H "Content-Type: application/json" -d '{"userId": "1", "postId": "2", "content": "Agreed"}'
+curl -X POST http://localhost:8080/comments -H "Content-Type: application/json" -d '{"userId": "1", "postId": "2", "content": "I doubt it!!!"}'
 
-curl -X POST http://localhost:8080/comments -H "Content-Type: application/json" -d '{"userId": "2", "postId": "2", "content": "Agreed"}'
+curl -X POST http://localhost:8080/comments -H "Content-Type: application/json" -d '{"userId": "2", "postId": "2", "content": "Indeed!!! You are right about that."}'
