@@ -7,7 +7,12 @@ import java.util.List;
 import java.util.Optional;
 
 public interface PostService {
+
     long save(PostDTO dto);
+
     Optional<Post> findById(long id);
+
     List<Post> findAll();
+
+    List<Post> findAllByAuthorId(Long id);
 }
