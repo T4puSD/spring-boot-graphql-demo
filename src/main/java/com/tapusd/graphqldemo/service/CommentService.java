@@ -7,7 +7,12 @@ import java.util.List;
 import java.util.Optional;
 
 public interface CommentService {
+
     long save(CommentDTO dto);
+
     Optional<Comment> findById(long id);
+
     List<Comment> findAll();
+
+    List<Comment> findAllByPostId(Long id);
 }
