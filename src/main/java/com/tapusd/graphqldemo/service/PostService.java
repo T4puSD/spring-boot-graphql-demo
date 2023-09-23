@@ -2,6 +2,7 @@ package com.tapusd.graphqldemo.service;
 
 import com.tapusd.graphqldemo.domain.Post;
 import com.tapusd.graphqldemo.dto.PostDTO;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,4 +16,6 @@ public interface PostService {
     List<Post> findAll();
 
     List<Post> findAllByAuthorId(Long id);
+
+    Page<Post> findAll(Integer page, Integer perPage);
 }

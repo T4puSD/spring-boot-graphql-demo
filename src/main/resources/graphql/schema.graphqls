@@ -21,7 +21,7 @@ type Comment {
 
 type Query {
     users: [User!]
-    posts: [Post!]
+    posts(page: Int, perPage: Int): [Post!]
     comments: [Comment!]
     user(id: ID!): User
     post(id: ID!): Post

@@ -5,9 +5,13 @@ import com.tapusd.graphqldemo.domain.User;
 import com.tapusd.graphqldemo.dto.PostDTO;
 import com.tapusd.graphqldemo.repository.PostRepository;
 import com.tapusd.graphqldemo.repository.sequence.DatabaseSequenceRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -15,14 +19,11 @@ public class PostServiceImpl implements PostService {
 
     private final PostRepository postRepository;
     private final DatabaseSequenceRepository databaseSequenceRepository;
-    private final UserService userService;
 
     public PostServiceImpl(PostRepository postRepository,
-                           DatabaseSequenceRepository databaseSequenceRepository,
-                           UserService userService) {
+                           DatabaseSequenceRepository databaseSequenceRepository) {
         this.postRepository = postRepository;
         this.databaseSequenceRepository = databaseSequenceRepository;
-        this.userService = userService;
     }
 
     @Override
@@ -52,5 +53,14 @@ public class PostServiceImpl implements PostService {
     @Override
     public List<Post> findAllByAuthorId(Long id) {
         return postRepository.findAllByAuthorId(id);
+    }
+
+    @Override
+    public Page<Post> findAll(Integer page, Integer perPage) {
+        if (Objects.nonNull(page) && Objects.nonNull(perPage)) {
+            return postRepository.findAll(PageRequest.of(page, perPage));
+        } else {
+            return postRepository.findAll(Pageable.unpaged());
+        }
     }
 }
