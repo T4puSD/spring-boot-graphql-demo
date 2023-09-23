@@ -17,6 +17,7 @@ type Post {
 type Comment {
     id: ID!
     content: String!
+    user: User!
 }
 
 type Query {
