@@ -26,3 +26,9 @@ type Query {
     user(id: ID!): User
     post(id: ID!): Post
 }
+
+type Mutation {
+    addUser(email: String!, name: String!): Int
+    addPost(slug: String!, title: String!, description: String!, authorId: Int!): Int
+    addComment(userId: Int!, postId: Int!, content: String!): Int
+}
