@@ -33,6 +33,7 @@ public class PostServiceImpl implements PostService {
                 .setSlug(dto.slug())
                 .setTitle(dto.title())
                 .setDescription(dto.description())
+                .setTags(dto.tags())
 //                .setAuthor(userService.findById(dto.authorId()).orElseThrow(() -> new IllegalArgumentException("No author found with provided id")));
                 // saving post without confirming if the author id is valid
                 .setAuthor(new User().setId(dto.authorId()));

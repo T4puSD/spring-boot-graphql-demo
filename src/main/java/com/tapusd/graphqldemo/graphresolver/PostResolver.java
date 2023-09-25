@@ -42,7 +42,8 @@ public class PostResolver {
     public long addPost(@Argument String slug,
                         @Argument String title,
                         @Argument String description,
-                        @Argument Long authorId) {
-        return postService.save(new PostDTO(slug, title, description, authorId));
+                        @Argument Long authorId,
+                        @Argument List<String> tags) {
+        return postService.save(new PostDTO(slug, title, description, authorId, tags));
     }
 }

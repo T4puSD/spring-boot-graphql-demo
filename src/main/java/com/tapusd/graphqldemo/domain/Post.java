@@ -38,6 +38,8 @@ public class Post {
     @DocumentReference(lazy = true, lookup = "{'post' : ?#{#self.id}}")
     private List<Comment> comments;
 
+    private List<String> tags;
+
     public Long getId() {
         return id;
     }
@@ -92,14 +94,23 @@ public class Post {
         return this;
     }
 
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public Post setTags(List<String> tags) {
+        this.tags = tags;
+        return this;
+    }
+
     @Override
     public String toString() {
         return "Post{" +
-                "id=" + id +
-                ", slug='" + slug + '\'' +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", author=" + author +
-                '}';
+               "id=" + id +
+               ", slug='" + slug + '\'' +
+               ", title='" + title + '\'' +
+               ", description='" + description + '\'' +
+               ", tags=" + tags +
+               '}';
     }
 }
