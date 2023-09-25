@@ -36,9 +36,14 @@ class Post {
 ## Run the project
 ### Run with Test Container
 This project uses `testcontainer` dependency. So the system should have
-`docker` installed and running if running with test container enabled main class
-located in `test/java/com/tapusd/graphqldemo/TestGraphqldemoApplication`
-Run the project from that file to run without preparing a local mongodb instance.
+`docker` installed and running. Go to the test container enabled main class
+located in `test/java/com/tapusd/graphqldemo/TestGraphqldemoApplication` and 
+run the project from that file to run without preparing a local mongodb instance.
+
+> Keep in mind that the test container will restart everytime you restart the server. So   
+> better utilize the intellij & spring devtools to restart the service by just re building
+> the project. If you are using intellij idea then press (Ctrl + F9) to rebuild the project
+> to get new changes or search for the rebuild option and click it from the menu.
 
 ### Run as a normal spring boot project
 The project expect a mongodb instance uri to start the project so you need to provide a mongodb
