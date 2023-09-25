@@ -6,6 +6,9 @@ import com.tapusd.graphqldemo.repository.ChatRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -27,7 +30,8 @@ public class ChatServiceImpl implements ChatService {
         var chat = new Chat()
                 .setRoomId(dto.roomId())
                 .setUserId(dto.userId())
-                .setMessage(dto.message());
+                .setMessage(dto.message())
+                .setCreated(LocalDateTime.now());
 
         return chatRepository.save(chat);
     }

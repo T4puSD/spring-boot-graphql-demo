@@ -34,6 +34,22 @@
             <artifactId>hibernate-validator</artifactId>
         </dependency>
 
+        <!-- Extended Scaler for Graphql type -->
+        <!-- Ref: https://github.com/graphql-java/graphql-java-extended-scalars -->
+        <dependency>
+            <groupId>com.graphql-java</groupId>
+            <artifactId>graphql-java-extended-scalars</artifactId>
+            <version>21.0</version>
+        </dependency>
+
+        <!-- Extended Date Time support for graphql Types -->
+        <!-- Ref: https://github.com/tailrocks/graphql-java-datetime -->
+        <dependency>
+            <groupId>com.tailrocks.graphql</groupId>
+            <artifactId>graphql-datetime-spring-boot-starter</artifactId>
+            <version>6.0.0</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>

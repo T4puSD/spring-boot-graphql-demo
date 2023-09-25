@@ -7,6 +7,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
+import java.time.LocalDateTime;
+
 @Document(collection = "chat")
 public class Chat {
 
@@ -24,6 +26,8 @@ public class Chat {
     @NotEmpty
     @Length(max = 1024)
     private String message;
+
+    private LocalDateTime created;
 
     public String getId() {
         return id;
@@ -61,13 +65,23 @@ public class Chat {
         return this;
     }
 
+    public LocalDateTime getCreated() {
+        return created;
+    }
+
+    public Chat setCreated(LocalDateTime created) {
+        this.created = created;
+        return this;
+    }
+
     @Override
     public String toString() {
         return "Chat{" +
-               "id=" + id +
+               "id='" + id + '\'' +
                ", roomId='" + roomId + '\'' +
                ", userId=" + userId +
                ", message='" + message + '\'' +
+               ", created=" + created +
                '}';
     }
 }

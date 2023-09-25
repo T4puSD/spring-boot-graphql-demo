@@ -1,3 +1,5 @@
+scalar LocalDateTime
+
 type User {
     id: ID!
     name: String!
@@ -26,6 +28,7 @@ type Chat {
     roomId:String!
     userId: Int!
     message: String!
+    created: LocalDateTime
 }
 
 type Query {
