@@ -40,3 +40,12 @@ query queryPosts{
         tags
     }
 }
+
+subscription SubscribeOnChat{
+  notifyNewChat{
+    id,
+    roomId,
+    userId,
+    message
+  }
+}
