@@ -1,0 +1,42 @@
+mutation allMutationExecute {
+    addUser(email: "monty@dummy.com", name: "Monty"),
+    addComment(userId:3, postId: 2, content:"Great to be on the same page"),
+    addPost(slug:"version-chromatic-color",
+        title:"Version Chromatic Color",
+        authorId:3,
+        description:"I like the color in version chromatic shade!!!",
+        tags: ["chromatic", "color"]
+    )
+}
+
+mutation postWithoutTagMutation{
+    addPost(slug:"mobile-technology",
+        title: "Mobile Technology",
+        authorId: 3,
+        description:"The mobile technology of the future"
+    )
+}
+
+query postsByAuthor {
+    user(id:2){
+        id,
+        email,
+        posts{
+            slug,
+            title
+        }
+    }
+}
+
+query queryPosts{
+    posts{
+        slug,
+        title,
+        author{
+            name,
+            email
+        }
+        description,
+        tags
+    }
+}
