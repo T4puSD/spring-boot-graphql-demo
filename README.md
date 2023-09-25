@@ -66,6 +66,18 @@ query console to perform query against the graphql server.
 The source directory has a bash file with rest call to fill up the test container with 
 dummy data. Run the following bash file with the following command `bash dummydata-populate.sh` to do so.
 
-### Reference
+### Populating With Dummy Graphql
+The file `dummygraphql-query.graphqls` contains the some mutations to add new data through graphql.   
+Copy the contents of the file and past it to the graphiql console and hit run to add new data with graphql   
+mutations.
+
+> Don't run the mutations endpoints unless untill you read and perform the Populating MongoDB with dummy data section
+
+The source directory has a bash file with rest call to fill up the test container with 
+dummy data. Run the following bash file with the following command `bash dummydata-populate.sh` to do so.
+
+### References
 - https://spring.io/blog/2021/11/29/spring-data-mongodb-relation-modelling
 - https://dev.to/tleipzig/using-documentreference-for-relations-in-spring-boot-mongodb-34c6
+- https://foojay.io/today/exposing-your-data-using-spring-graphql/
+- https://bootify.io/mongodb/document-reference-in-spring-boot-mongodb.html
