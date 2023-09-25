@@ -21,16 +21,25 @@ type Comment {
     user: User!
 }
 
+type Chat {
+    id: ID!
+    roomId:String!
+    userId: Int!
+    message: String!
+}
+
 type Query {
     users: [User!]
     posts(page: Int, perPage: Int): [Post!]
     comments: [Comment!]
     user(id: ID!): User
     post(id: ID!): Post
+    chats(roomId: String!): [Chat!]
 }
 
 type Mutation {
     addUser(email: String!, name: String!): Int
     addPost(slug: String!, title: String!, description: String!, authorId: Int!, tags: [String!]): Int
     addComment(userId: Int!, postId: Int!, content: String!): Int
+    sendChat(roomId: String!, userId: Int!, message: String!): Chat!
 }
