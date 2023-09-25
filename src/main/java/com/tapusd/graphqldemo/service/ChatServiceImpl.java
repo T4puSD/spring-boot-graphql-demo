@@ -5,19 +5,23 @@ import com.tapusd.graphqldemo.dto.ChatDTO;
 import com.tapusd.graphqldemo.repository.ChatRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.FluxSink;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class ChatServiceImpl implements ChatService {
 
     private final ChatRepository chatRepository;
+    private FluxSink<Chat> chatHandler;
+    private final Flux<Chat> chatFlux;
 
     public ChatServiceImpl(ChatRepository chatRepository) {
         this.chatRepository = chatRepository;
+        chatFlux = Flux.<Chat>create(sink -> chatHandler= sink, FluxSink.OverflowStrategy.DROP);
     }
 
     @Override
@@ -33,11 +37,25 @@ public class ChatServiceImpl implements ChatService {
                 .setMessage(dto.message())
                 .setCreated(LocalDateTime.now());
 
-        return chatRepository.save(chat);
+        Chat savedChat = chatRepository.save(chat);
+        sendChat(savedChat);
+        return savedChat;
     }
 
     @Override
     public List<Chat> findAllByRoomId(String roomId) {
         return chatRepository.findAllByRoomId(roomId);
+    }
+
+    @Override
+    public Flux<Chat> notifyNewChat() {
+        return chatFlux;
+    }
+
+    private void sendChat(Chat chat) {
+        if (Objects.isNull(chatHandler)) {
+            return;
+        }
+        chatHandler.next(chat);
     }
 }

@@ -46,3 +46,7 @@ type Mutation {
     addComment(userId: Int!, postId: Int!, content: String!): Int
     sendChat(roomId: String!, userId: Int!, message: String!): Chat!
 }
+
+type Subscription {
+    notifyNewChat: Chat
+}

@@ -8,6 +8,7 @@ import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.graphql.data.method.annotation.SubscriptionMapping;
 import org.springframework.stereotype.Controller;
+import reactor.core.publisher.Flux;
 
 import java.util.List;
 
@@ -30,5 +31,10 @@ public class ChatResolver {
                          @Argument Long userId,
                          @Argument String message) {
         return chatService.save(new ChatDTO(roomId, userId, message));
+    }
+
+    @SubscriptionMapping
+    public Flux<Chat> notifyNewChat() {
+        return chatService.notifyNewChat();
     }
 }
