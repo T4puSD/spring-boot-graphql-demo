@@ -63,6 +63,14 @@ export SPRING_DATA_MONGODB_URI=mongodb://host[:port]/[database_name]
 mvn clean spring-boot:run
 ```
 
+Alternatively you can make a handly run script named `run.sh` like following: 
+```shell
+export SPRING_DATA_MONGODB_URI=mongodb://host[:port]/[database_name]
+mvn clean spring-boot:run
+```
+And then and run the project with it with `bash run.sh` command.
+
+
 ## Test the graphql interactive query console
 Go to the following url `http://localhost:8080/graphiql` to get the default graphiql
 query console to perform query against the graphql server.
