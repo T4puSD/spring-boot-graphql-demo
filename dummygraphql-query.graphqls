@@ -41,6 +41,13 @@ query queryPosts{
     }
 }
 
+mutation SendChatMutation{
+  sendChat(roomId:"room-1", userId:1, message:"Hi everyone!") {
+    userId,
+    message
+  }
+}
+
 subscription SubscribeOnChat{
   notifyNewChat{
     id,
