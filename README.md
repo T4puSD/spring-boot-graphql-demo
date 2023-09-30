@@ -89,6 +89,11 @@ mutations.
 The source directory has a bash file with rest call to fill up the test container with 
 dummy data. Run the following bash file with the following command `bash dummydata-populate.sh` to do so.
 
+### Populating with liquibase dummy data changelog
+To populate database with dummy data without testcontainer dependency,run the following   
+command`mvn liquibase:update` and liquibase will populate the database with dummy data   
+defined in the changelog.xml file.
+
 ### References
 - https://spring.io/blog/2021/11/29/spring-data-mongodb-relation-modelling
 - https://dev.to/tleipzig/using-documentreference-for-relations-in-spring-boot-mongodb-34c6

@@ -1,0 +1,135 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="1" author="tapusd">
+        <ext:insertMany collectionName="user">
+            <ext:documents>
+                [
+                {
+                "name": "John Doe",
+                "email": "john.doe@example.com"
+                },
+                {
+                "name": "Jane Smith",
+                "email": "jane.smith@example.com"
+                },
+                {
+                "name": "Alice Johnson",
+                "email": "alice.johnson@example.com"
+                },
+                {
+                "name": "Bob Williams",
+                "email": "bob.williams@example.com"
+                },
+                {
+                "name": "Eva Davis",
+                "email": "eva.davis@example.com"
+                }
+                ]
+            </ext:documents>
+        </ext:insertMany>
+        <ext:insertMany collectionName="post">
+            <ext:documents>
+                [
+                {
+                "slug": "sample-post-1",
+                "title": "Sample Post 1",
+                "description": "This is the first sample post.",
+                "author_id": 1,
+                "tags": ["tag1", "tag2"]
+                },
+                {
+                "slug": "another-sample-post",
+                "title": "Another Sample Post",
+                "description": "This is another sample post.",
+                "author_id": 2,
+                "tags": ["tag2", "tag3"]
+                },
+                {
+                "slug": "my-third-post",
+                "title": "My Third Post",
+                "description": "This is the third post I've written.",
+                "author_id": 3,
+                "tags": ["tag1", "tag4"]
+                },
+                {
+                "slug": "exciting-article",
+                "title": "Exciting Article",
+                "description": "An exciting article for readers.",
+                "author_id": 4,
+                "tags": ["tag3", "tag5"]
+                },
+                {
+                "slug": "last-post-of-the-day",
+                "title": "Last Post of the Day",
+                "description": "Ending the day with this post.",
+                "author_id": 5,
+                "tags": ["tag4", "tag5"]
+                }
+                ]
+            </ext:documents>
+        </ext:insertMany>
+        <ext:insertMany collectionName="comment">
+            <ext:documents>
+                [
+                {
+                "user_id": 1,
+                "post_id": 1,
+                "content": "Great start to your writing journey, John! I'm eager to read more."
+                },
+                {
+                "user_id": 2,
+                "post_id": 1,
+                "content": "The autumn setting sets the perfect tone for new beginnings."
+                },
+                {
+                "user_id": 3,
+                "post_id": 2,
+                "content": "Sarah, your investigative work is impressive. Can't wait for your next revelation!"
+                },
+                {
+                "user_id": 4,
+                "post_id": 2,
+                "content": "Metropolis is full of mysteries, and you're uncovering them one by one."
+                },
+                {
+                "user_id": 5,
+                "post_id": 3,
+                "content": "Emily, your love for nature shines through your writing. Keep exploring!"
+                },
+                {
+                "user_id": 1,
+                "post_id": 3,
+                "content": "Your descriptions make me feel like I'm right there in the countryside."
+                },
+                {
+                "user_id": 2,
+                "post_id": 4,
+                "content": "Exciting article, capturing the heart of sports. Keep up the great work!"
+                },
+                {
+                "user_id": 3,
+                "post_id": 4,
+                "content": "I felt like I was in the game while reading this. You've got a talent for sports storytelling."
+                },
+                {
+                "user_id": 4,
+                "post_id": 5,
+                "content": "A perfect ending to the day with your post. Looking forward to more, Eva!"
+                },
+                {
+                "user_id": 5,
+                "post_id": 5,
+                "content": "Your posts always leave me wanting more. Keep up the fantastic work."
+                }
+                ]
+            </ext:documents>
+        </ext:insertMany>
+    </changeSet>
+
+</databaseChangeLog>
