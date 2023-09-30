@@ -7,6 +7,7 @@ import org.springframework.data.mongodb.core.mapping.DocumentReference;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 @Document(collection = "comment")
+// One user can not comment more than once in a post
 @CompoundIndex(def = "{'user_id': 1, 'post_id': 1}", unique = true)
 public class Comment {
 
