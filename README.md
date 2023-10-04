@@ -84,6 +84,10 @@ The file `dummygraphql-query.graphqls` contains the some mutations to add new da
 Copy the contents of the file and past it to the graphiql console and hit run to add new data with graphql   
 mutations.
 
+### Mongock Dataloader
+By default, mongock data loader migration will populate the database with some dummy data that is 
+written in `DataLoader.java` file.
+
 > Don't run the mutations endpoints unless untill you read and perform the Populating MongoDB with dummy data section
 
 The source directory has a bash file with rest call to fill up the test container with 
