@@ -3,6 +3,7 @@ package com.tapusd.graphqldemo.changelog;
 import com.tapusd.graphqldemo.domain.Comment;
 import com.tapusd.graphqldemo.domain.Post;
 import com.tapusd.graphqldemo.domain.User;
+import com.tapusd.graphqldemo.repository.sequence.DatabaseSequence;
 import io.mongock.api.annotations.BeforeExecution;
 import io.mongock.api.annotations.ChangeUnit;
 import io.mongock.api.annotations.Execution;
@@ -91,6 +92,10 @@ public class DataLoader {
                         .setUser(new User().setId(1L))
         );
         comments.forEach(mongoTemplate::save);
+
+        mongoTemplate.save(new DatabaseSequence().setId(User.SEQUENCE_NAME).setSequence(2L));
+        mongoTemplate.save(new DatabaseSequence().setId(Post.SEQUENCE_NAME).setSequence(3L));
+        mongoTemplate.save(new DatabaseSequence().setId(Comment.SEQUENCE_NAME).setSequence(2L));
     }
 
     @RollbackExecution
